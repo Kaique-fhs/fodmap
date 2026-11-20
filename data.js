@@ -8,7 +8,14 @@ window.FONTES = {
   tuasaude: { nome: "Tua Saúde – cardápio FODMAP", url: "https://www.tuasaude.com/dieta-fodmap-para-sindrome-do-intestino-irritavel/" },
   vitat: { nome: "Vitat – dieta FODMAP e cardápio", url: "https://vitat.com.br/dieta-fodmap/" },
   nutritotal: { nome: "Nutritotal – receitas low FODMAP", url: "https://nutritotal.com.br/publico-geral/material/receita-low-fodmap-rolinho-de-camarao-oriental/" },
-  lista: { nome: "Monash University – lista de compras low FODMAP", url: "https://monashfodmap.com/blog/low-fodmap-shopping-list/" }
+  lista: { nome: "Monash University – lista de compras low FODMAP", url: "https://monashfodmap.com/blog/low-fodmap-shopping-list/" },
+  monashIndice: { nome: "Monash University – índice de receitas", url: "https://monashfodmap.com/recipe/monash-low-fodmap-recipe-index/" },
+  everyday: { nome: "FODMAP Everyday – receitas fáceis", url: "https://www.fodmapeveryday.com/dish-type/easy/" },
+  everydayUma: { nome: "FODMAP Everyday – pratos de uma panela", url: "https://www.fodmapeveryday.com/dish-type/one-dish-dinners/" },
+  innerbuddies: { nome: "InnerBuddies – receitas baixo FODMAP", url: "https://www.innerbuddies.com/pt/pages/recipe-diet/low-fodmap" },
+  healthecooks: { nome: "Health eCooks – jantares low FODMAP", url: "https://healthecooks.com/blog/6-low-fodmap-dinner-recipes-youll-love" },
+  irena: { nome: "Irena Macri – jantares low FODMAP", url: "https://irenamacri.com/low-fodmap-dinner-recipes/" },
+  sopaTomate: { nome: "Nutritotal – sopa de tomate low FODMAP", url: "https://nutritotal.com.br/publico-geral/material/sopa-de-tomate/" }
 };
 
 // Categoria de cada produto na lista de compras
@@ -20,6 +27,9 @@ window.PRODUTOS = {
   "Pimentão vermelho": "Hortifrúti", "Alface": "Hortifrúti", "Cebolinha (só a parte verde)": "Hortifrúti",
   "Gengibre": "Hortifrúti", "Manjericão": "Hortifrúti", "Salsinha": "Hortifrúti", "Coentro": "Hortifrúti",
   "Broto de feijão": "Hortifrúti", "Berinjela": "Hortifrúti", "Chuchu": "Hortifrúti",
+  "Brócolis": "Hortifrúti", "Hortelã": "Hortifrúti", "Repolho": "Hortifrúti", "Tomate-cereja": "Hortifrúti", "Couve": "Hortifrúti",
+  "Camarão": "Proteínas", "Bacon": "Proteínas",
+  "Folha de arroz (papel de arroz)": "Mercearia", "Leite de coco": "Mercearia", "Arroz arbóreo": "Mercearia", "Macarrão sem glúten": "Mercearia",
   "Ovos": "Proteínas", "Peito de frango": "Proteínas", "Carne moída": "Proteínas", "Carne para panela (acém ou músculo)": "Proteínas",
   "Salmão": "Proteínas", "Filé de peixe branco (tilápia ou pescada)": "Proteínas",
   "Leite sem lactose": "Laticínios sem lactose", "Iogurte natural sem lactose": "Laticínios sem lactose",
@@ -142,7 +152,7 @@ window.RECEITAS = [
     preparo: ["Cozinhe as batatas e amasse com o leite, a manteiga e sal até virar purê.", "Doure a carne no azeite, tempere com sal, páprica e pimenta e junte o tomate. Cozinhe por 10 minutos e finalize com cebolinha.", "Numa travessa, coloque a carne, cubra com o purê e o queijo.", "Leve ao forno a 200 °C por 15 minutos para gratinar."]
   },
   {
-    id: "frango-xadrez", nome: "Frango xadrez", tipo: "principal", tempo: "30 min", rendimento: "2 porções", fonte: "nutritotal",
+    id: "frango-xadrez", nome: "Frango xadrez", tipo: "principal", jantar: true, tempo: "30 min", rendimento: "2 porções", fonte: "nutritotal",
     ingredientes: [["2 filés de peito de frango em cubos", "Peito de frango"], ["1/2 pimentão vermelho em cubos", "Pimentão vermelho"], ["1 cenoura em cubos", "Cenoura"],
       ["2 colheres de sopa de molho shoyu", "Molho shoyu"], ["1 colher de chá de gengibre ralado", "Gengibre"], ["1 colher de sopa de amendoim torrado", "Amendoim torrado sem sal"],
       ["1 colher de sopa de óleo", "Óleo vegetal"], ["Cebolinha (só a parte verde)", "Cebolinha (só a parte verde)"], ["1 xícara de arroz para acompanhar", "Arroz"]],
@@ -156,7 +166,7 @@ window.RECEITAS = [
     preparo: ["Doure o frango temperado com sal no azeite.", "Junte o tomate, a cenoura e a cúrcuma e refogue por 2 minutos.", "Acrescente o arroz, mexa e cubra com a água quente.", "Cozinhe com a panela semitampada até secar, uns 20 minutos.", "Finalize com cebolinha e salsinha."]
   },
   {
-    id: "pad-thai", nome: "Pad thai de frango", tipo: "principal", tempo: "30 min", rendimento: "2 porções", fonte: "monash",
+    id: "pad-thai", nome: "Pad thai de frango", tipo: "principal", jantar: true, tempo: "30 min", rendimento: "2 porções", fonte: "monash",
     ingredientes: [["150g de macarrão de arroz", "Macarrão de arroz"], ["1 filé de peito de frango em tiras", "Peito de frango"], ["2 ovos", "Ovos"],
       ["1 xícara de broto de feijão", "Broto de feijão"], ["1 cenoura em tiras", "Cenoura"], ["2 colheres de sopa de molho shoyu", "Molho shoyu"],
       ["1 colher de sopa de açúcar mascavo", "Açúcar mascavo"], ["Suco de 1 limão", "Limão"], ["2 colheres de sopa de amendoim picado", "Amendoim torrado sem sal"],
@@ -164,7 +174,7 @@ window.RECEITAS = [
     preparo: ["Hidrate o macarrão em água quente conforme a embalagem e escorra.", "Misture o shoyu, o açúcar e o limão para o molho.", "Doure o frango no óleo, empurre para o lado e mexa os ovos na mesma frigideira.", "Junte o macarrão, a cenoura, o broto e o molho e salteie por 2 minutos.", "Sirva com amendoim, cebolinha e coentro."]
   },
   {
-    id: "poke-salmao", nome: "Poke de salmão", tipo: "principal", tempo: "25 min", rendimento: "2 porções", fonte: "monash",
+    id: "poke-salmao", nome: "Poke de salmão", tipo: "principal", jantar: true, tempo: "25 min", rendimento: "2 porções", fonte: "monash",
     ingredientes: [["1 xícara de arroz (cozido e frio)", "Arroz"], ["250g de salmão fresco em cubos", "Salmão"], ["1 pepino em cubos", "Pepino"], ["1 cenoura ralada", "Cenoura"],
       ["1 kiwi ou 1 fatia de abacaxi em cubos", "Abacaxi", true], ["2 colheres de sopa de molho shoyu", "Molho shoyu"], ["1 colher de chá de gengibre ralado", "Gengibre"],
       ["1 colher de sopa de gergelim", "Gergelim"], ["Cebolinha (só a parte verde)", "Cebolinha (só a parte verde)"]],
@@ -178,7 +188,7 @@ window.RECEITAS = [
     preparo: ["Doure a carne no azeite, tempere com sal e orégano, junte o molho e cozinhe por 15 minutos.", "Dissolva o fubá na água fria com sal e leve ao fogo, mexendo sempre, por 20 minutos.", "Desligue e misture a manteiga e o parmesão.", "Sirva a polenta com o ragu por cima."]
   },
   {
-    id: "salada-quinoa-frango", nome: "Salada de quinoa com frango", tipo: "principal", tempo: "25 min", rendimento: "2 porções", fonte: "monash",
+    id: "salada-quinoa-frango", nome: "Salada de quinoa com frango", tipo: "principal", jantar: true, tempo: "25 min", rendimento: "2 porções", fonte: "monash",
     ingredientes: [["1/2 xícara de quinoa", "Quinoa"], ["1 filé de peito de frango grelhado em cubos", "Peito de frango"], ["1 tomate em cubos", "Tomate"], ["1/2 pepino em cubos", "Pepino"],
       ["1 xícara de folhas de espinafre ou alface", "Espinafre"], ["2 colheres de sopa de azeite de oliva", "Azeite de oliva"], ["Suco de 1 limão", "Limão"],
       ["Salsinha e cebolinha (só a parte verde)", "Salsinha"], ["Sal a gosto", "Sal"]],
@@ -193,7 +203,7 @@ window.RECEITAS = [
     dica: "A abobrinha é baixa em FODMAP numa porção de cerca de 1/3 de xícara. Dividida em 4 porções, a receita fica dentro do limite."
   },
   {
-    id: "tacos-frango", nome: "Tacos de frango com tortilha de milho", tipo: "principal", tempo: "25 min", rendimento: "2 porções (6 tacos)", fonte: "monash",
+    id: "tacos-frango", nome: "Tacos de frango com tortilha de milho", tipo: "principal", jantar: true, tempo: "25 min", rendimento: "2 porções (6 tacos)", fonte: "monash",
     ingredientes: [["6 tortilhas de milho", "Tortilha de milho"], ["2 filés de peito de frango em tiras", "Peito de frango"], ["1 colher de chá de cominho", "Cominho"], ["1 colher de chá de páprica", "Páprica"],
       ["Alface picada", "Alface"], ["1 tomate em cubos", "Tomate"], ["1/2 xícara de queijo muçarela ralado", "Queijo muçarela"], ["Suco de 1 limão e coentro", "Limão"],
       ["1 colher de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"], ["Sal a gosto", "Sal"]],
@@ -201,7 +211,7 @@ window.RECEITAS = [
     dica: "Confira o rótulo: a tortilha deve ser de milho e sem trigo, alho ou cebola."
   },
   {
-    id: "sopa-legumes-frango", nome: "Sopa de legumes com frango", tipo: "principal", tempo: "40 min", rendimento: "4 porções", fonte: "tuasaude",
+    id: "sopa-legumes-frango", nome: "Sopa de legumes com frango", tipo: "principal", jantar: true, tempo: "40 min", rendimento: "4 porções", fonte: "tuasaude",
     ingredientes: [["300g de peito de frango em cubos", "Peito de frango"], ["2 batatas em cubos", "Batata"], ["2 cenouras em rodelas", "Cenoura"], ["1 chuchu em cubos", "Chuchu"],
       ["1 xícara de abóbora cabotiá em cubos", "Abóbora cabotiá"], ["2 colheres de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"], ["1 litro de água", null],
       ["1 colher de chá de cúrcuma", "Cúrcuma (açafrão-da-terra)", true], ["Cebolinha (só a parte verde) e salsinha", "Salsinha"], ["Sal a gosto", "Sal"]],
@@ -209,7 +219,7 @@ window.RECEITAS = [
     dica: "Caldo em cubo ou tablete quase sempre tem cebola e alho. Use só água e temperos frescos."
   },
   {
-    id: "creme-abobora", nome: "Creme de abóbora com gengibre", tipo: "principal", tempo: "35 min", rendimento: "3 porções", fonte: "monash",
+    id: "creme-abobora", nome: "Creme de abóbora com gengibre", tipo: "principal", jantar: true, tempo: "35 min", rendimento: "3 porções", fonte: "monash",
     ingredientes: [["500g de abóbora cabotiá em cubos", "Abóbora cabotiá"], ["1 batata em cubos", "Batata"], ["1 colher de chá de gengibre ralado", "Gengibre"],
       ["1 colher de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"], ["3 xícaras de água", null], ["2 colheres de sopa de creme de leite sem lactose", "Creme de leite sem lactose", true],
       ["Sal e pimenta a gosto", "Sal"]],
@@ -231,10 +241,120 @@ window.RECEITAS = [
     dica: "Ketchup e mostarda prontos costumam levar cebola e alho. Esta versão usa só tomate e páprica."
   },
   {
-    id: "berinjela-recheada", nome: "Berinjela recheada com carne", tipo: "principal", tempo: "45 min", rendimento: "2 porções", fonte: "monash",
+    id: "berinjela-recheada", nome: "Berinjela recheada com carne", tipo: "principal", jantar: true, tempo: "45 min", rendimento: "2 porções", fonte: "monash",
     ingredientes: [["1 berinjela grande", "Berinjela"], ["250g de carne moída", "Carne moída"], ["1 tomate picado", "Tomate"], ["1 colher de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"],
       ["1/2 xícara de queijo muçarela ralado", "Queijo muçarela"], ["Orégano, sal e pimenta a gosto", "Orégano"]],
     preparo: ["Corte a berinjela ao meio, retire parte da polpa e pique.", "Doure a carne no azeite, junte a polpa picada, o tomate e os temperos e cozinhe por 10 minutos.", "Recheie as metades, cubra com queijo e asse a 200 °C por 25 minutos."]
+  },
+
+  // ---------- Jantar ----------
+  {
+    id: "sopa-tomate", nome: "Sopa de tomate com especiarias", tipo: "principal", jantar: true, tempo: "30 min", rendimento: "3 porções", fonte: "sopaTomate",
+    ingredientes: [["6 tomates maduros picados (ou 2 latas de tomate pelado)", "Tomate"], ["1 cenoura picada", "Cenoura"], ["1 batata pequena em cubos", "Batata"],
+      ["2 colheres de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"], ["1 colher de chá de cominho", "Cominho"], ["1 colher de chá de páprica", "Páprica"],
+      ["3 xícaras de água", null], ["Manjericão para servir", "Manjericão", true], ["Sal e pimenta a gosto", "Sal"]],
+    preparo: ["Refogue a cenoura e a batata no azeite por 3 minutos.", "Junte o tomate, o cominho, a páprica e a água e cozinhe por 20 minutos.", "Bata no liquidificador, acerte o sal e sirva com manjericão."],
+    dica: "Fica ótima com torradas de pão sem glúten ou com um ovo cozido picado por cima."
+  },
+  {
+    id: "rolinho-camarao", nome: "Rolinho de camarão oriental", tipo: "principal", jantar: true, tempo: "30 min", rendimento: "2 porções (8 rolinhos)", fonte: "nutritotal",
+    ingredientes: [["8 folhas de arroz (papel de arroz)", "Folha de arroz (papel de arroz)"], ["200g de camarão limpo e cozido", "Camarão"], ["50g de macarrão de arroz fino cozido", "Macarrão de arroz"],
+      ["1 cenoura em tiras finas", "Cenoura"], ["1/2 pepino em tiras", "Pepino"], ["Folhas de alface", "Alface"], ["Folhas de hortelã e coentro", "Hortelã"],
+      ["Molho: 2 colheres de sopa de shoyu, suco de 1/2 limão e 1 colher de chá de gengibre", "Molho shoyu"], ["Suco de limão para o molho", "Limão"]],
+    preparo: ["Molhe uma folha de arroz em água morna por poucos segundos e coloque sobre um pano úmido.", "Recheie com alface, macarrão, cenoura, pepino, ervas e camarão.", "Dobre as laterais e enrole bem firme.", "Misture o shoyu, o limão e o gengibre e sirva como molho."]
+  },
+  {
+    id: "camarao-brocolis", nome: "Camarão salteado com brócolis", tipo: "principal", jantar: true, tempo: "20 min", rendimento: "2 porções", fonte: "everyday",
+    ingredientes: [["300g de camarão limpo", "Camarão"], ["1 xícara de floretes de brócolis (só as flores)", "Brócolis"], ["1/2 pimentão vermelho em tiras", "Pimentão vermelho"],
+      ["2 colheres de sopa de molho shoyu", "Molho shoyu"], ["1 colher de chá de gengibre ralado", "Gengibre"], ["1 colher de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"],
+      ["Gergelim e cebolinha (só a parte verde)", "Gergelim"], ["1 xícara de arroz para acompanhar", "Arroz"]],
+    preparo: ["Cozinhe o brócolis no vapor por 3 minutos.", "Salteie o camarão no azeite bem quente por 2 minutos de cada lado.", "Junte o pimentão, o brócolis, o gengibre e o shoyu e mexa por mais 2 minutos.", "Finalize com gergelim e cebolinha e sirva com arroz."],
+    dica: "Use só as flores do brócolis: os talos têm mais FODMAP. Cerca de 3/4 de xícara por pessoa é uma porção baixa."
+  },
+  {
+    id: "frango-limao-arroz", nome: "Frango ao limão com arroz (uma panela só)", tipo: "principal", jantar: true, tempo: "30 min", rendimento: "3 porções", fonte: "irena",
+    ingredientes: [["500g de peito de frango em cubos", "Peito de frango"], ["1 e 1/2 xícara de arroz", "Arroz"], ["1 limão (suco e raspas)", "Limão"],
+      ["2 colheres de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"], ["3 xícaras de água quente", null], ["1 xícara de espinafre", "Espinafre"],
+      ["Salsinha picada", "Salsinha"], ["Sal e pimenta a gosto", "Sal"]],
+    preparo: ["Tempere o frango com raspas de limão, sal e pimenta e doure no azeite.", "Junte o arroz e mexa por 1 minuto.", "Acrescente a água e o suco do limão, tampe e cozinhe em fogo baixo por 15 minutos.", "Misture o espinafre no final para murchar e finalize com salsinha."]
+  },
+  {
+    id: "curry-frango", nome: "Curry de frango com gengibre", tipo: "principal", jantar: true, tempo: "30 min", rendimento: "3 porções", fonte: "innerbuddies",
+    ingredientes: [["500g de peito de frango em cubos", "Peito de frango"], ["1/2 xícara de leite de coco", "Leite de coco"], ["1 lata de tomate pelado", "Tomate pelado em lata"],
+      ["1 colher de sopa de gengibre ralado", "Gengibre"], ["1 colher de chá de cúrcuma", "Cúrcuma (açafrão-da-terra)"], ["1 colher de chá de cominho", "Cominho"],
+      ["1/2 pimentão vermelho em tiras", "Pimentão vermelho"], ["1 xícara de espinafre", "Espinafre"], ["1 colher de sopa de óleo", "Óleo vegetal"],
+      ["Coentro para finalizar", "Coentro", true], ["1 xícara de arroz para acompanhar", "Arroz"], ["Sal a gosto", "Sal"]],
+    preparo: ["Doure o frango no óleo com sal.", "Junte o gengibre, a cúrcuma e o cominho e mexa por 1 minuto.", "Acrescente o tomate e o pimentão e cozinhe por 10 minutos.", "Junte o leite de coco e o espinafre e cozinhe mais 3 minutos.", "Sirva com arroz e coentro."],
+    dica: "Leite de coco é baixo em FODMAP até cerca de 1/2 xícara por porção. Confira se o curry em pó, se usar, não tem cebola nem alho."
+  },
+  {
+    id: "risoto-abobora", nome: "Risoto de abóbora com espinafre", tipo: "principal", jantar: true, tempo: "40 min", rendimento: "3 porções", fonte: "innerbuddies",
+    ingredientes: [["1 xícara de arroz arbóreo", "Arroz arbóreo"], ["300g de abóbora cabotiá em cubos pequenos", "Abóbora cabotiá"], ["1 cenoura ralada", "Cenoura"],
+      ["1 xícara de espinafre", "Espinafre"], ["1 litro de água quente com sal e 1 folha de louro", "Louro"], ["2 colheres de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"],
+      ["1 colher de sopa de manteiga", "Manteiga"], ["1/2 xícara de queijo parmesão ralado", "Queijo parmesão"], ["Sal e pimenta a gosto", "Sal"]],
+    preparo: ["Refogue a abóbora e a cenoura no azeite por 5 minutos.", "Junte o arroz e mexa por 2 minutos.", "Acrescente a água quente uma concha por vez, mexendo, até o arroz ficar al dente (uns 18 minutos).", "Desligue e misture o espinafre, a manteiga e o parmesão."],
+    dica: "Caldo pronto tem cebola e alho. Água temperada com louro, sal e cenoura resolve."
+  },
+  {
+    id: "peixe-crosta-fuba", nome: "Peixe com crosta de fubá e parmesão", tipo: "principal", jantar: true, tempo: "25 min", rendimento: "2 porções", fonte: "healthecooks",
+    ingredientes: [["2 filés de peixe branco", "Filé de peixe branco (tilápia ou pescada)"], ["1 ovo batido", "Ovos"], ["4 colheres de sopa de fubá", "Fubá (polenta)"],
+      ["2 colheres de sopa de queijo parmesão ralado", "Queijo parmesão"], ["1 colher de chá de páprica", "Páprica"], ["Suco de 1/2 limão", "Limão"],
+      ["Fio de azeite", "Azeite de oliva"], ["Salada de alface e tomate para acompanhar", "Alface"], ["Sal a gosto", "Sal"]],
+    preparo: ["Tempere o peixe com limão e sal.", "Misture o fubá, o parmesão e a páprica.", "Passe o peixe no ovo e depois na mistura de fubá.", "Regue com azeite e asse na air fryer a 200 °C por 12 minutos (ou no forno por 20 minutos).", "Sirva com a salada."],
+    dica: "Farinha de rosca e empanados prontos costumam ter trigo e alho em pó. O fubá deixa crocante sem isso."
+  },
+  {
+    id: "gratinado-salmao-batata", nome: "Gratinado de salmão e batata", tipo: "principal", jantar: true, tempo: "50 min", rendimento: "4 porções", fonte: "monashIndice",
+    ingredientes: [["400g de salmão em cubos", "Salmão"], ["4 batatas em rodelas finas", "Batata"], ["1 caixinha de creme de leite sem lactose", "Creme de leite sem lactose"],
+      ["1/2 xícara de leite sem lactose", "Leite sem lactose"], ["1/2 xícara de queijo muçarela ralado", "Queijo muçarela"], ["Cebolinha (só a parte verde)", "Cebolinha (só a parte verde)"],
+      ["Raspas de 1 limão", "Limão"], ["Sal e pimenta a gosto", "Sal"]],
+    preparo: ["Cozinhe as rodelas de batata por 5 minutos e escorra.", "Misture o creme de leite, o leite, as raspas de limão, a cebolinha, sal e pimenta.", "Numa travessa, faça camadas de batata e salmão, regando com o creme.", "Cubra com o queijo e asse a 190 °C por 30 minutos."]
+  },
+  {
+    id: "tacos-carne-repolho", nome: "Tacos de carne com salada de repolho", tipo: "principal", jantar: true, tempo: "25 min", rendimento: "2 porções (6 tacos)", fonte: "monashIndice",
+    ingredientes: [["6 tortilhas de milho", "Tortilha de milho"], ["300g de carne moída", "Carne moída"], ["1 colher de chá de cominho", "Cominho"], ["1 colher de chá de páprica", "Páprica"],
+      ["1 xícara de repolho fatiado fino", "Repolho"], ["1 cenoura ralada", "Cenoura"], ["Suco de 1 limão", "Limão"], ["Coentro picado", "Coentro", true],
+      ["1 colher de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"], ["Sal a gosto", "Sal"]],
+    preparo: ["Doure a carne no azeite com cominho, páprica e sal.", "Misture o repolho e a cenoura com o limão e uma pitada de sal.", "Aqueça as tortilhas numa frigideira seca.", "Recheie com a carne e a salada e finalize com coentro."],
+    dica: "Repolho branco é baixo em FODMAP até cerca de 3/4 de xícara por porção."
+  },
+  {
+    id: "macarrao-primavera", nome: "Macarrão primavera sem glúten", tipo: "principal", jantar: true, tempo: "25 min", rendimento: "2 porções", fonte: "everydayUma",
+    ingredientes: [["160g de macarrão sem glúten (arroz ou milho)", "Macarrão sem glúten"], ["1/2 abobrinha em meia-lua", "Abobrinha"], ["1 cenoura em tiras", "Cenoura"],
+      ["10 tomates-cereja cortados ao meio", "Tomate-cereja"], ["1 xícara de espinafre", "Espinafre"], ["2 colheres de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"],
+      ["3 colheres de sopa de queijo parmesão", "Queijo parmesão"], ["Manjericão", "Manjericão"], ["Sal e pimenta a gosto", "Sal"]],
+    preparo: ["Cozinhe o macarrão conforme a embalagem e reserve um pouco da água.", "Salteie a cenoura e a abobrinha no azeite por 4 minutos.", "Junte os tomates e o espinafre e mexa até murchar.", "Misture o macarrão, um pouco da água do cozimento, o parmesão e o manjericão."]
+  },
+  {
+    id: "wrap-alface-carne", nome: "Wrap de alface com carne oriental", tipo: "principal", jantar: true, tempo: "20 min", rendimento: "2 porções", fonte: "everyday",
+    ingredientes: [["300g de carne moída", "Carne moída"], ["1 cenoura ralada", "Cenoura"], ["2 colheres de sopa de molho shoyu", "Molho shoyu"], ["1 colher de chá de gengibre ralado", "Gengibre"],
+      ["1 colher de sopa de óleo", "Óleo vegetal"], ["Folhas grandes de alface", "Alface"], ["2 colheres de sopa de amendoim picado", "Amendoim torrado sem sal"],
+      ["Cebolinha (só a parte verde)", "Cebolinha (só a parte verde)"], ["Suco de 1/2 limão", "Limão"]],
+    preparo: ["Doure a carne no óleo.", "Junte a cenoura, o gengibre e o shoyu e cozinhe por 3 minutos.", "Finalize com limão e cebolinha.", "Sirva a carne dentro das folhas de alface com amendoim por cima."]
+  },
+  {
+    id: "panqueca-frango", nome: "Panqueca de frango com molho de tomate", tipo: "principal", jantar: true, tempo: "45 min", rendimento: "3 porções (6 panquecas)", fonte: "vitat",
+    ingredientes: [["1 xícara de farinha de arroz", "Farinha de arroz"], ["1 xícara de leite sem lactose", "Leite sem lactose"], ["2 ovos", "Ovos"],
+      ["300g de peito de frango cozido e desfiado", "Peito de frango"], ["2 xícaras de molho de tomate caseiro", "Tomate pelado em lata"],
+      ["1 colher de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"], ["1/2 xícara de queijo muçarela ralado", "Queijo muçarela"],
+      ["Cebolinha (só a parte verde)", "Cebolinha (só a parte verde)"], ["Sal a gosto", "Sal"]],
+    preparo: ["Bata a farinha, o leite, os ovos e o sal até ficar liso.", "Faça discos finos numa frigideira antiaderente untada.", "Refogue o frango no azeite com metade do molho e a cebolinha.", "Recheie, enrole, cubra com o restante do molho e o queijo e leve ao forno até gratinar."]
+  },
+  {
+    id: "arroz-frito", nome: "Arroz frito com ovo e legumes", tipo: "principal", jantar: true, tempo: "20 min", rendimento: "2 porções", fonte: "everyday",
+    ingredientes: [["2 xícaras de arroz cozido (de preferência do dia anterior)", "Arroz"], ["2 ovos", "Ovos"], ["1 cenoura em cubinhos", "Cenoura"],
+      ["1/2 pimentão vermelho em cubinhos", "Pimentão vermelho"], ["1/2 xícara de broto de feijão", "Broto de feijão"], ["2 colheres de sopa de molho shoyu", "Molho shoyu"],
+      ["1 colher de sopa de óleo", "Óleo vegetal"], ["Cebolinha (só a parte verde)", "Cebolinha (só a parte verde)"], ["Sobra de frango ou camarão", "Peito de frango", true]],
+    preparo: ["Mexa os ovos no óleo e reserve.", "Salteie a cenoura e o pimentão por 3 minutos.", "Junte o arroz e o shoyu e frite mexendo até soltar.", "Volte os ovos, junte o broto e a cebolinha e sirva."],
+    dica: "Bom para aproveitar sobras de arroz e de frango do almoço."
+  },
+  {
+    id: "caldo-verde", nome: "Caldo verde com frango", tipo: "principal", jantar: true, tempo: "40 min", rendimento: "4 porções", fonte: "tuasaude",
+    ingredientes: [["5 batatas em cubos", "Batata"], ["1 maço de couve fatiada bem fina", "Couve"], ["250g de peito de frango em cubinhos", "Peito de frango"],
+      ["50g de bacon em cubinhos", "Bacon", true], ["2 colheres de sopa de azeite aromatizado com alho", "Azeite aromatizado com alho"], ["1 litro e meio de água", null],
+      ["Sal e pimenta a gosto", "Sal"]],
+    preparo: ["Cozinhe as batatas na água com sal até desmancharem e bata no liquidificador.", "Doure o frango (e o bacon, se usar) no azeite.", "Volte o creme de batata à panela, junte o frango e deixe ferver.", "Junte a couve, cozinhe por 3 minutos e sirva com um fio de azeite."],
+    dica: "A linguiça tradicional quase sempre tem alho e cebola, por isso entra o frango. Confira o rótulo do bacon."
   },
 
   // ---------- Lanches e doces ----------

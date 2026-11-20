@@ -137,7 +137,7 @@
     return '<article class="cartao' + (s ? " selecionada" : "") + '">' +
       '<div class="cartao-topo"><h3><a href="#receita/' + r.id + '">' + esc(r.nome) + '</a></h3>' +
       '<button class="btn-fav" data-fav="' + r.id + '" aria-pressed="' + fav + '" aria-label="' + (fav ? "Remover dos favoritos" : "Favoritar") + ': ' + esc(r.nome) + '">' + ICON.heart + '</button></div>' +
-      '<div class="meta"><span class="chip">' + TIPOS[r.tipo] + '</span><span class="chip">' + esc(r.tempo) + '</span><span class="chip">' + esc(r.rendimento) + '</span></div>' +
+      '<div class="meta"><span class="chip">' + TIPOS[r.tipo] + '</span>' + (r.jantar ? '<span class="chip destaque">Bom para o jantar</span>' : '') + '<span class="chip">' + esc(r.tempo) + '</span><span class="chip">' + esc(r.rendimento) + '</span></div>' +
       '<div class="acoes"><a class="btn flex" href="#receita/' + r.id + '">Ver receita</a>' +
       '<button class="btn flex' + (s ? " primario" : "") + '" data-sel="' + r.id + '" aria-pressed="' + s + '" aria-label="' + (s ? "Tirar da lista de compras" : "Adicionar à lista de compras") + ': ' + esc(r.nome) + '">' +
       (s ? ICON.check + "Na lista" : ICON.plus + "Adicionar") + '</button></div></article>';
@@ -148,6 +148,7 @@
     return lista.filter(function (r) {
       if (filtro === "selecionadas" && sel.indexOf(r.id) < 0) return false;
       if (filtro === "favoritas" && favs.indexOf(r.id) < 0) return false;
+      if (filtro === "jantar" && !r.jantar) return false;
       if (TIPOS[filtro] && r.tipo !== filtro) return false;
       if (!q) return true;
       return semAcento(r.nome + " " + r.ingredientes.map(function (i) { return i[0]; }).join(" ")).indexOf(q) >= 0;
@@ -162,7 +163,7 @@
   }
 
   function telaReceitas() {
-    var botoes = [["todas", "Todas"], ["cafe", "Café da manhã"], ["principal", "Almoço e jantar"], ["lanche", "Lanches e doces"],
+    var botoes = [["todas", "Todas"], ["cafe", "Café da manhã"], ["principal", "Almoço e jantar"], ["jantar", "Jantar"], ["lanche", "Lanches e doces"],
       ["favoritas", "Favoritas (" + favs.length + ")"], ["selecionadas", "Na lista (" + sel.length + ")"]];
     return '<h2 class="titulo-secao">Receitas low FODMAP</h2>' +
       '<p class="descricao">' + RECEITAS.length + ' receitas sem alho, sem cebola e sem lactose, com porções baixas em FODMAP. Toque em <b>Adicionar</b> nas que você vai fazer e veja o que comprar na aba Compras.</p>' +
@@ -180,7 +181,7 @@
     var fav = favs.indexOf(r.id) >= 0, s = sel.indexOf(r.id) >= 0, f = FONTES[r.fonte];
     return '<a class="btn voltar" href="#receitas">' + ICON.back + 'Receitas</a>' +
       '<article class="detalhe"><h2>' + esc(r.nome) + '</h2>' +
-      '<div class="meta"><span class="chip">' + TIPOS[r.tipo] + '</span><span class="chip">' + esc(r.tempo) + '</span><span class="chip">Rende ' + esc(r.rendimento) + '</span></div>' +
+      '<div class="meta"><span class="chip">' + TIPOS[r.tipo] + '</span>' + (r.jantar ? '<span class="chip destaque">Bom para o jantar</span>' : '') + '<span class="chip">' + esc(r.tempo) + '</span><span class="chip">Rende ' + esc(r.rendimento) + '</span></div>' +
       '<div class="acoes"><button class="btn' + (fav ? " primario" : "") + '" data-fav="' + r.id + '" aria-pressed="' + fav + '">' + ICON.heart + (fav ? "Favorita" : "Favoritar") + '</button>' +
       '<button class="btn' + (s ? " primario" : "") + '" data-sel="' + r.id + '" aria-pressed="' + s + '">' + (s ? ICON.check + "Na lista de compras" : ICON.plus + "Adicionar à lista de compras") + '</button></div>' +
       '<h3>Ingredientes</h3><ul>' + r.ingredientes.map(function (i) { return '<li>' + esc(i[0]) + (i[2] ? ' <span class="detalhes" style="display:inline">(opcional)</span>' : '') + '</li>'; }).join("") + '</ul>' +
